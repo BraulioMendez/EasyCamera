@@ -1,6 +1,7 @@
 package carrousel.leo.mx.viewholder
 
 import android.view.View
+import carrousel.leo.mx.model.Image
 import mx.leo.easyrecycler.viewholder.EasyHeaderViewHolder
 
 /**
@@ -8,4 +9,5 @@ import mx.leo.easyrecycler.viewholder.EasyHeaderViewHolder
  */
 class HeaderViewHolder(view: View) : EasyHeaderViewHolder(view) {
 
+    fun bindHeader(image : Image){ }
 }
