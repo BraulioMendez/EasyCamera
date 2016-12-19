@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Carrousel.iml" filepath="$PROJECT_DIR$/Carrousel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EasyCamera.iml" filepath="$PROJECT_DIR$/EasyCamera.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/carrousel/carrousel.iml" filepath="$PROJECT_DIR$/carrousel/carrousel.iml" />
     </modules>
