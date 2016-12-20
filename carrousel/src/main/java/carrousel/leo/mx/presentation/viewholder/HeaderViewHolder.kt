@@ -1,4 +1,4 @@
-package carrousel.leo.mx.viewholder
+package carrousel.leo.mx.presentation.viewholder
 
 import android.view.View
 import carrousel.leo.mx.model.Image
