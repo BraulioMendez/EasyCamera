@@ -9,8 +9,9 @@ import android.view.ViewGroup
 import carrousel.leo.mx.R
 import carrousel.leo.mx.presentation.adapter.CarrouselAdapter
 import kotlinx.android.synthetic.main.carrousel_layout.*
+import pub.devrel.easypermissions.EasyPermissions
 
-class CarrouselFragment : Fragment() {
+class CarrouselFragment : Fragment(), EasyPermissions.PermissionCallbacks {
 
     var carrouselAdapter: CarrouselAdapter
 
@@ -33,4 +34,15 @@ class CarrouselFragment : Fragment() {
         carrousel.adapter = carrouselAdapter
     }
 
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>?) {
+        throw UnsupportedOperationException("not implemented")
+    }
+
+    override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>?) {
+        throw UnsupportedOperationException("not implemented")
+    }
 }
