@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Carrousel</string>
+    <string name="image_options_title">Choose image</string>
+
+    <string-array name="image_options">
+        <item>Camera</item>
+        <item>Gallery</item>
+    </string-array>
 </resources>

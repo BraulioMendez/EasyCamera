@@ -17,11 +17,10 @@ import mx.leo.easyrecycler.viewholder.EasyViewHolder
 class CarrouselAdapter : EasyHeaderAdapter<Image>() {
 
     override fun onBindHeaderViewHolder(headerHolder: EasyViewHolder) {
-        throw UnsupportedOperationException("not implemented")
     }
 
     override fun onBindItemViewHolder(holder: EasyViewHolder, item: Image, position: Int) {
-        throw UnsupportedOperationException("not implemented")
+
     }
 
     override fun createHeaderViewHolder(parent: ViewGroup?): EasyHeaderViewHolder {
