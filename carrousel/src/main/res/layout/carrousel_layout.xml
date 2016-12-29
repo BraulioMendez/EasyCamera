@@ -2,6 +2,6 @@
 <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
   android:id="@+id/carrousel"
   android:layout_width="match_parent"
-  android:layout_height="@dimen/carrousel_heigth">
-
-</android.support.v7.widget.RecyclerView>
+  android:layout_height="@dimen/carrousel_heigth"
+  android:background="@color/light_gray"
+  android:padding="@dimen/padding_medium"/>
