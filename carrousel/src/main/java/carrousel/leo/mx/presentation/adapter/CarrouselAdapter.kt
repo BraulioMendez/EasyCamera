@@ -14,13 +14,14 @@ import mx.leo.easyrecycler.viewholder.EasyViewHolder
 /**
  * Created by Braulio on 17/12/2016.
  */
-class CarrouselAdapter : EasyHeaderAdapter<Image>() {
+class CarrouselAdapter : EasyHeaderAdapter<Image?>() {
 
     override fun onBindHeaderViewHolder(headerHolder: EasyViewHolder) {
     }
 
-    override fun onBindItemViewHolder(holder: EasyViewHolder, item: Image, position: Int) {
-
+    override fun onBindItemViewHolder(holder: EasyViewHolder, item: Image?, position: Int) {
+            val itemHolder = holder as ItemViewHolder
+            itemHolder.bindItem(item)
     }
 
     override fun createHeaderViewHolder(parent: ViewGroup?): EasyHeaderViewHolder {
