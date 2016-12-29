@@ -6,6 +6,6 @@ import android.net.Uri
 /**
  * Created by Braulio on 17/12/2016.
  */
-class Image (var url : String, var bitmap: Bitmap, var uri : Uri) {
+class Image (var url : String = "", var bitmap: Bitmap? = null, var uri : Uri? = null) {
 
 }

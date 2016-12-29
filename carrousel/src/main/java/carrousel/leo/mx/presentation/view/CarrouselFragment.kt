@@ -1,6 +1,8 @@
 package carrousel.leo.mx.presentation.view
 
 import android.content.DialogInterface
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AlertDialog
@@ -9,19 +11,31 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import carrousel.leo.mx.R
+import carrousel.leo.mx.model.Image
 import carrousel.leo.mx.presentation.adapter.CarrouselAdapter
+import carrousel.leo.mx.presentation.presenter.CarouselPresenter
 import kotlinx.android.synthetic.main.carrousel_layout.*
 import mx.leo.easyrecycler.util.RecyclerViewHeaderClickListener
 import mx.leo.easyrecycler.util.RecyclerViewItemClickListener
 import mx.leo.easyrecycler.util.extensions.onHeaderAndItemClickListener
 import pub.devrel.easypermissions.EasyPermissions
+import carrousel.leo.mx.presentation.presenter.CarouselPresenter.RESULT_CODES
 
 class CarrouselFragment : Fragment(), EasyPermissions.PermissionCallbacks {
 
     var carrouselAdapter: CarrouselAdapter
+    var carouselPresenter:CarouselPresenter
+    var carouseView:CarouselView
 
     init{
         carrouselAdapter = CarrouselAdapter()
+        carouseView = object:CarouselView {
+            override fun showImage(image: Image?) {
+                carrouselAdapter.addItem(image)
+            }
+        }
+
+        carouselPresenter = CarouselPresenter(this,carouseView)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View?
@@ -49,16 +63,22 @@ class CarrouselFragment : Fragment(), EasyPermissions.PermissionCallbacks {
         })
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        carouselPresenter.activityResult(requestCode,resultCode,data)
+    }
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        EasyPermissions.onRequestPermissionsResult(requestCode,permissions,grantResults,this)
     }
 
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>?) {
-        throw UnsupportedOperationException("not implemented")
+
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>?) {
-        throw UnsupportedOperationException("not implemented")
+        if(requestCode == RESULT_CODES.READ_PERMISSION_CODE){
+            carouselPresenter.openGallery()
+        }
     }
 
     fun showImageOption(){
@@ -68,7 +88,7 @@ class CarrouselFragment : Fragment(), EasyPermissions.PermissionCallbacks {
             dialogInterface, position ->
             when (position){
                 0 -> ""
-                1 -> ""
+                1 -> carouselPresenter.openGallery()
             }
         });
         imageOptionsDialog.show()

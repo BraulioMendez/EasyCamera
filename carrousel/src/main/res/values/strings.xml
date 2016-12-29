@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Carrousel</string>
     <string name="image_options_title">Choose image</string>
+    <string name="gallery_image_message">This app needs access to your gallery</string>
 
     <string-array name="image_options">
         <item>Camera</item>
