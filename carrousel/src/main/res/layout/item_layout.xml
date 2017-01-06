@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:fresco="http://schemas.android.com/apk/res-auto"
-  android:orientation="vertical"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
-  android:paddingBottom="@dimen/padding_medium"
-  android:paddingTop="@dimen/padding_medium"
-  android:paddingLeft="@dimen/padding_medium">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/padding_medium"
+    android:paddingLeft="@dimen/padding_medium"
+    android:paddingTop="@dimen/padding_medium">
 
-  <com.facebook.drawee.view.SimpleDraweeView
-    android:id="@+id/item_image"
-    android:layout_width="@dimen/header_image_width"
-    android:layout_height="@dimen/header_image_height"
-    fresco:roundAsCircle="true"
-    fresco:backgroundImage="@android:color/white"
-    />
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_image"
+        android:layout_width="@dimen/header_image_width"
+        android:layout_height="@dimen/header_image_height"
+        fresco:backgroundImage="@android:color/white"
+        fresco:roundAsCircle="true"/>
 
 </LinearLayout>

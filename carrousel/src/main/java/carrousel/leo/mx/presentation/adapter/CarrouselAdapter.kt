@@ -16,19 +16,18 @@ import mx.leo.easyrecycler.viewholder.EasyViewHolder
  */
 class CarrouselAdapter : EasyHeaderAdapter<Image?>() {
 
-    override fun onBindHeaderViewHolder(headerHolder: EasyViewHolder) {
-    }
-
-    override fun onBindItemViewHolder(holder: EasyViewHolder, item: Image?, position: Int) {
-            val itemHolder = holder as ItemViewHolder
-            itemHolder.bindItem(item)
-    }
-
     override fun createHeaderViewHolder(parent: ViewGroup?): EasyHeaderViewHolder {
         return HeaderViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.header_layout, parent, false))
     }
 
     override fun createItemViewHolder(parent: ViewGroup?): EasyItemViewHolder {
         return ItemViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_layout, parent, false))
+    }
+
+    override fun onBindHeaderViewHolder(headerHolder: EasyViewHolder) { }
+
+    override fun onBindItemViewHolder(holder: EasyViewHolder, item: Image?, position: Int) {
+        val itemHolder = holder as ItemViewHolder
+        itemHolder.bindItem(item)
     }
 }

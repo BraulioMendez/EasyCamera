@@ -10,7 +10,7 @@ import mx.leo.easyrecycler.viewholder.EasyItemViewHolder
  */
 class ItemViewHolder(view: View) : EasyItemViewHolder(view) {
 
-    fun bindItem(image : Image?){
+    fun bindItem(image: Image?) {
         itemView.item_image.setImageURI(image?.uri, itemView.item_image.context)
     }
 }
